@@ -6,7 +6,7 @@
         WindowStyle="None"
         AllowsTransparency="True"
         Background="Transparent"
-        Height="720" Width="1080">
+        Height="720" Width="1080" Loaded="Window_Loaded">
 
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVis"/>
@@ -124,7 +124,7 @@
                             </Button>
                         </StackPanel>
 
-                        <Button Style="{StaticResource menuButton}" VerticalAlignment="Bottom" DockPanel.Dock="Bottom" Margin="15 0 15 20">
+                        <Button Style="{StaticResource menuButton}" VerticalAlignment="Bottom" DockPanel.Dock="Bottom" Margin="15 0 15 20" Click="Button_Click">
                             <StackPanel Orientation="Horizontal">
                                 <Icon:PackIconMaterial Kind="Logout" Style="{StaticResource menuButtonIcon}"/>
                                 <TextBlock Text="Đăng xuất"/>
