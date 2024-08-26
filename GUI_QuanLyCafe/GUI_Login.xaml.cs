@@ -218,18 +218,12 @@ namespace GUI_QuanLyCafe
                     //    }
                     //}
 
-
-
-                    MessageBox.Show("ĐĂNG NHẬP THÀNH CÔNG", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
-                    GUI_MainWindow main = new GUI_MainWindow();
+                    GUI_MainWindow.session = 1;
+                    this.Hide();
+                    GUI_MainWindow main = new GUI_MainWindow(staff.email);
                     main.ShowDialog();
 
-                    DataTable dt = busStaff.LoginStatus(staff.email);
-                    int loginStatus = int.Parse(dt.Rows[0][0].ToString());
-                    if (loginStatus == 0)
-                    {
-                        MessageBox.Show("VUI LÒNG ĐỔI MẬT KHẨU (ĐĂNG NHẬP LẦN ĐẦU)", "THÔNG BÁO", MessageBoxButton.OK, MessageBoxImage.Warning);
-                    }
+                    
 
                 }
                 else
@@ -284,6 +278,36 @@ namespace GUI_QuanLyCafe
             else
             {
                 return;
+            }
+        }
+
+        private void chkGhiNhoTK_Checked(object sender, RoutedEventArgs e)
+        {
+            //Lưu email
+            if (chkGhiNhoTK.IsChecked == true)
+            {
+                Properties.Settings.Default.SavedEmail = txtEmail.Text;
+                Properties.Settings.Default.RememberEmail = true;
+            }
+            else
+            {
+                Properties.Settings.Default.SavedEmail = string.Empty;
+                Properties.Settings.Default.RememberEmail = false;
+            }
+            Properties.Settings.Default.Save();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            // Kiểm tra xem có email đã được lưu không
+            if (Properties.Settings.Default.RememberEmail)
+            {
+                txtEmail.Text = Properties.Settings.Default.SavedEmail;
+                chkGhiNhoTK.IsChecked = true;
+            }
+            else
+            {
+                chkGhiNhoTK.IsChecked = false;
             }
         }
     }

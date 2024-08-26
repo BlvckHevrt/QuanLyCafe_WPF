@@ -53,6 +53,10 @@ namespace BUS_QuanLyCafe
         {
             return employee.capNhatMK(email, matkhau);
         }
+        public DataTable VaiTro(string email)
+        {
+            return employee.vaiTro(email);
+        }
         public bool insert(DTO_Employee em)
         {
             return employee.insert(em);
