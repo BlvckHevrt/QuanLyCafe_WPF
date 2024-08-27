@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,14 +13,22 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
+using BUS_QuanLyCafe;
+using static System.Collections.Specialized.BitVector32;
+using System.Collections;
 
 namespace GUI_QuanLyCafe
 {
     public partial class GUI_MainWindow : Window
     {
-        public GUI_MainWindow()
+        string email;
+        public static int session = 0; //tình trạng login
+        public static string role { set; get; } //kiểm tra vai trò sau đăng nhập
+        public static int status { set; get; }
+        public GUI_MainWindow(string email)
         {
             InitializeComponent();
+            this.email = email;
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
@@ -80,6 +89,34 @@ namespace GUI_QuanLyCafe
         private void imgClose_MouseUp(object sender, MouseButtonEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            BUS_Employee busStaff = new BUS_Employee();
+
+            DataTable dt = busStaff.LoginStatus(this.email);
+
+            DataTable dt1 = busStaff.VaiTro(this.email);
+
+            role = dt1.Rows[0]["roleStaff"].ToString();
+
+            int loginStatus = int.Parse(dt.Rows[0][0].ToString());
+            if (loginStatus == 0)
+            {
+                MessageBox.Show("VUI LÒNG ĐỔI MẬT KHẨU (ĐĂNG NHẬP LẦN ĐẦU)", "THÔNG BÁO", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("BẠN CHẮC CHẮN MUỐN ĐĂNG XUẤT?", "THÔNG BÁO", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.Yes)
+            {
+                session = 0;
+                this.Hide();
+                GUI_Login dangNhap = new GUI_Login();
+                dangNhap.Show();
+            }
         }
     }
 }

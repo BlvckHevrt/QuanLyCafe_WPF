@@ -7,7 +7,7 @@
         WindowState="Maximized"
         AllowsTransparency="True"
         Background="Transparent"
-        Height="720" Width="1270">
+        Height="720" Width="1080" Loaded="Window_Loaded">
 
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVis"/>

@@ -9,7 +9,7 @@
         WindowStyle="None"
         AllowsTransparency="True"
         Background="Transparent"
-        Title="MainWindow" Height="560" Width="890">
+        Title="MainWindow" Height="560" Width="890" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -76,7 +76,7 @@
                     </Grid>
                 </Border>
 
-                <CheckBox x:Name="chkGhiNhoTK" Content="Remember me" Style="{StaticResource chkEmail}" />
+                <CheckBox x:Name="chkGhiNhoTK" Content="Remember me" Style="{StaticResource chkEmail}" Checked="chkGhiNhoTK_Checked" />
 
                 <StackPanel Orientation="Horizontal">
                     <Button x:Name="btnLogin" Content="Sign In" Style="{StaticResource SignInButton}" Click="btnLogin_Click"/>

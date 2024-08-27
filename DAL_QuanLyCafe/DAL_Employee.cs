@@ -168,6 +168,32 @@ namespace DAL_QuanLyCafe
             }
             return false;
         }
+        public DataTable vaiTro(string email)
+        {
+            try
+            {
+                using (conn = new SqlConnection(_conn))
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "VaiTro";
+                    cmd.Parameters.AddWithValue("@email", email);
+                    conn.Open();
+
+                    DataTable dtNhanVien = new DataTable();
+                    dtNhanVien.Load(cmd.ExecuteReader());
+                    return dtNhanVien;
+                }
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
         public bool insert(DTO_Employee staff)
         {
             try
