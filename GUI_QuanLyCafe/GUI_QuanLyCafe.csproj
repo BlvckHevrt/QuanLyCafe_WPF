@@ -63,10 +63,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="AddForm\GUI_AddSanPham.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="GUI_Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="AddForm\GUI_AddSanPham.xaml.cs">
+      <DependentUpon>GUI_AddSanPham.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -78,10 +85,52 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="GUI_QLBan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI_QLHoaDon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI_QLNhanVien.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI_QLSanPham.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI_QLThongKe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI_QLVoucher.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GUI_MainWindow.xaml.cs">
       <DependentUpon>GUI_MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_QLBan.xaml.cs">
+      <DependentUpon>GUI_QLBan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_QLHoaDon.xaml.cs">
+      <DependentUpon>GUI_QLHoaDon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_QLNhanVien.xaml.cs">
+      <DependentUpon>GUI_QLNhanVien.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_QLSanPham.xaml.cs">
+      <DependentUpon>GUI_QLSanPham.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_QLThongKe.xaml.cs">
+      <DependentUpon>GUI_QLThongKe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_QLVoucher.xaml.cs">
+      <DependentUpon>GUI_QLVoucher.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -131,5 +180,9 @@
   <ItemGroup>
     <Resource Include="Images\akashi.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\maximize.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

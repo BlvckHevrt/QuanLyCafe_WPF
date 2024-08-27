@@ -53,14 +53,33 @@ namespace GUI_QuanLyCafe
 
         }
 
-        private void btnThem_Click(object sender, RoutedEventArgs e)
+        private void LoadFormNhanVien()
         {
-
+            var nhanVienControl = new GUI_QLNhanVien();
+            gridMainContent.Children.Clear();
+            gridMainContent.Children.Add(nhanVienControl);
         }
 
-        private void btnTimKiem_Click(object sender, RoutedEventArgs e)
+        private void btnQLNhanVien_Click(object sender, RoutedEventArgs e)
         {
+            LoadFormNhanVien();
+        }
 
+        private void LoadFormSanPham()
+        {
+            var sanPhamControl = new GUI_QLSanPham();
+            gridMainContent.Children.Clear();
+            gridMainContent.Children.Add(sanPhamControl);
+        }
+
+        private void btnQLSanPham_Click(object sender, RoutedEventArgs e)
+        {
+            LoadFormSanPham();
+        }
+
+        private void imgClose_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }
