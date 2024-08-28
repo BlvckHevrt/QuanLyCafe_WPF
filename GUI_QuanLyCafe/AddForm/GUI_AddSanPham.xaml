@@ -3,10 +3,97 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:GUI_QuanLyCafe.AddForm"
+        xmlns:local="clr-namespace:GUI_QuanLyCafe.AddForm" xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
         mc:Ignorable="d"
-        Title="GUI_AddSanPham" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        Title="GUI_AddSanPham" Height="450" Width="600">
+
+    <Border x:Name="Border" Background="White" CornerRadius="20">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="300"/>
+            </Grid.ColumnDefinitions>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Image Source="/Images/cancel.png" Grid.Column="1" Panel.ZIndex="1" MouseUp ="imgClose_MouseUp" Style="{StaticResource imgClose}" Margin="10"/>
+
+            <!--Tilte-->
+            <TextBlock Text="Thêm sản phẩm" Grid.Row="1" FontSize="28" FontWeight="SemiBold"
+                           Margin="20 10 0 0 " HorizontalAlignment="Left" Foreground="#121518"/>
+
+            <!--<TextBlock Text="Mã sản phẩm" Grid.Row="3" Margin="20 20 0 0"/>-->
+            
+            <!--MaSanPham-->
+            <Border BorderThickness="1" BorderBrush="#abc0af" CornerRadius="5" Grid.Row="2" Width="250" Height="30"
+                    HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top">
+                <Grid Margin="2 3">
+                    <TextBlock x:Name="txtMaSanPham1" Text="Mã sản phẩm" Style="{StaticResource textHint}"/>
+                    <TextBox x:Name="txtMaSanPham" Foreground="Black" FontSize="14"/>
+                </Grid>
+            </Border>
+            
+            <!--TenSanPham-->
+            <Border BorderThickness="1" BorderBrush="#abc0af" CornerRadius="5" Grid.Row="3" Width="250" Height="30"
+                    HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top">
+                <Grid Margin="2 3">
+                    <TextBlock x:Name="txtTenSanPham1" Text="Tên sản phẩm" Style="{StaticResource textHint}"/>
+                    <TextBox x:Name="txtTenSanPham" Foreground="Black" FontSize="14"/>
+                </Grid>
+            </Border>
+
+            <!--GiaSanPham-->
+            <Border BorderThickness="1" BorderBrush="#abc0af" CornerRadius="5" Grid.Row="4" Width="250" Height="30"
+                    HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top">
+                <Grid Margin="2 3">
+                    <TextBlock x:Name="txtGiaSanPham1" Text="Giá sản phẩm" Style="{StaticResource textHint}"/>
+                    <TextBox x:Name="txtGiaSanPham" Foreground="Black" FontSize="14"/>
+                </Grid>
+            </Border>
+
+            <!--LoaiSanPham-->
+            <ComboBox x:Name="cbLoaiSanPham" BorderThickness="1" BorderBrush="#abc0af" Grid.Row="5" Width="250" Height="30"
+                    HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top">
+
+            </ComboBox>
+            
+            <!--TrangThai-->
+            <GroupBox Grid.Row="6" BorderThickness="1" HorizontalAlignment="Left" Margin="20 20 0 0" Width="250" Height="50"
+                      Header="Trạng thái">
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton x:Name="rdoConBan" Content="Còn bán" />
+                    <RadioButton x:Name="rdoNgungBan" Content="Ngừng bán"/>
+                </StackPanel>
+            </GroupBox>
+            
+            <!--AnhSanPham-->
+            <Grid Grid.Column="1" Grid.RowSpan="9">
+                <Image Source="/Images/akashi.jpg" Stretch="Uniform" Margin="20" Height="250" Width="200"
+                       VerticalAlignment="Top"/>
+            </Grid>
+
+            <Button x:Name="btnHinhAnh" Grid.Row="6" Grid.Column="1" Style="{StaticResource imgButton}">
+                <StackPanel Orientation="Horizontal">
+                    <Icon:PackIconMaterial Kind="File" Style="{StaticResource menuButtonIcon}"/>
+                    <TextBlock Text="Mở hình"/>
+                </StackPanel>
+            </Button>
+
+        </Grid>
+
+    </Border>
+
 </Window>

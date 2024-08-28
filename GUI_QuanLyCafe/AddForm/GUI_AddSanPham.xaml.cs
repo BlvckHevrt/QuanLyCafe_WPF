@@ -23,5 +23,10 @@ namespace GUI_QuanLyCafe.AddForm
         {
             InitializeComponent();
         }
+
+        private void imgClose_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }
