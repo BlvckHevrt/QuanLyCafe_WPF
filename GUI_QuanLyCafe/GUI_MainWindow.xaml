@@ -21,7 +21,11 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Image Source="/Images/cancel.png" Grid.Column="1" Panel.ZIndex="1" MouseUp ="imgClose_MouseUp" Style="{StaticResource imgClose}"/>
+            <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right">
+                <Image x:Name="imgHide" Source="/Images/window.png" Grid.Column="1" Panel.ZIndex="1" Style="{StaticResource imgMinimize}" MouseUp="imgHide_MouseUp"/>
+                <Image x:Name="imgSize" Source="/Images/layers.png" Grid.Column="1" Panel.ZIndex="1" Style="{StaticResource imgMinimize}" MouseUp="imgSize_MouseUp"/>
+                <Image x:Name="imgClose" Source="/Images/close.png" Grid.Column="1" Panel.ZIndex="1" MouseUp ="imgClose_MouseUp" Style="{StaticResource imgClose}"/>
+            </StackPanel>
 
             <!--Left Menu-->
             <Grid>
@@ -35,7 +39,7 @@
                     <Icon:PackIconMaterial Kind="Menu" Width="15" Height="15"/>
                 </Button>-->
 
-                <Border Grid.Row="1" Background="#00704a" CornerRadius="0 50 0 20">
+                <Border Grid.Row="1" Background="#00704a" CornerRadius="0 50 0 10">
                     <DockPanel>
                         <!--Menu Logo-->
                         <Border Width="95" Height="95" Background="White" CornerRadius="100" 

@@ -95,11 +95,29 @@
         </Style>
 
         <Style x:Key="imgClose" TargetType="Image">
-            <Setter Property="Width" Value="15"/>
-            <Setter Property="Height" Value="15"/>
+            <Setter Property="Width" Value="20"/>
+            <Setter Property="Height" Value="20"/>
             <Setter Property="VerticalAlignment" Value="Top"/>
             <Setter Property="HorizontalAlignment" Value="Right"/>
-            <Setter Property="Margin" Value="0 13 13 0"/>
+            <Setter Property="Margin" Value="13 13 13 0"/>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="RenderTransform">
+                        <Setter.Value>
+                            <ScaleTransform ScaleX="1.1" ScaleY="1.1"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="imgMinimize" TargetType="Image">
+            <Setter Property="Width" Value="20"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Margin" Value="13 13 13 0"/>
 
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
@@ -266,11 +284,37 @@
             </Style.Triggers>
         </Style>
 
+        <Style x:Key="saveButton" TargetType="Button">
+            <Setter Property="Background" Value="#00704a"/>
+            <Setter Property="Foreground" Value="#ffffff"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="Width" Value="550"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Margin" Value="0 20 0 0"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#009966"/>
+                    <Setter Property="Foreground" Value="#ffffff"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
         <Style x:Key="imgButton" TargetType="Button">
             <Setter Property="Background" Value="#00704a"/>
             <Setter Property="Foreground" Value="#ffffff"/>
             <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-            <Setter Property="Width" Value="150"/>
+            <Setter Property="Width" Value="210"/>
             <Setter Property="Height" Value="35"/>
             <Setter Property="Margin" Value="0 20 0 0"/>
             <Setter Property="VerticalAlignment" Value="Center"/>

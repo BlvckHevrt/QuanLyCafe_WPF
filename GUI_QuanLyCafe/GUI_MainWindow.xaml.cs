@@ -118,5 +118,22 @@ namespace GUI_QuanLyCafe
                 dangNhap.Show();
             }
         }
+
+        private void imgSize_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            if(this.WindowState == WindowState.Maximized)
+            {
+                this.WindowState = WindowState.Normal;
+            }
+            else
+            {
+                this.WindowState= WindowState.Maximized;
+            }
+        }
+
+        private void imgHide_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
     }
 }

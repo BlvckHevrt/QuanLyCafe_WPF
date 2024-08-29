@@ -63,6 +63,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="AddForm\GUI_AddNhanVien.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AddForm\GUI_AddSanPham.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -71,6 +75,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="AddForm\GUI_AddNhanVien.xaml.cs">
+      <DependentUpon>GUI_AddNhanVien.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddForm\GUI_AddSanPham.xaml.cs">
       <DependentUpon>GUI_AddSanPham.xaml</DependentUpon>
     </Compile>
@@ -183,6 +190,20 @@
   <ItemGroup>
     <Resource Include="Images\maximize.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\window.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\layers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\close-window.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\coffee.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
