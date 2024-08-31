@@ -168,6 +168,35 @@ namespace DAL_QuanLyCafe
             }
             return false;
         }
+        public bool UpdateMK(string email, string matkhaucu, string matkhaumoi)
+        {
+            try
+            {
+                using (conn = new SqlConnection(_conn))
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "ChangePass";
+                    cmd.Parameters.AddWithValue("@email", email);
+                    cmd.Parameters.AddWithValue("@opwd", matkhaucu);
+                    cmd.Parameters.AddWithValue("@npwd", matkhaumoi);
+                    conn.Open();
+                    if (Convert.ToInt16(cmd.ExecuteNonQuery()) > 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return false;
+        }
         public DataTable vaiTro(string email)
         {
             try
