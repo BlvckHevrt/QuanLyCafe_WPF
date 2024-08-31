@@ -53,6 +53,10 @@ namespace BUS_QuanLyCafe
         {
             return employee.capNhatMK(email, matkhau);
         }
+        public bool updateNewMK(string email, string matkhaucu, string matkhaumoi)
+        {
+            return employee.UpdateMK(email, matkhaucu, matkhaumoi);
+        }
         public DataTable VaiTro(string email)
         {
             return employee.vaiTro(email);

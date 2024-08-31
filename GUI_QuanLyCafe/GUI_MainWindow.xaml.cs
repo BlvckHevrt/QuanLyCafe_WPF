@@ -105,6 +105,8 @@ namespace GUI_QuanLyCafe
             if (loginStatus == 0)
             {
                 MessageBox.Show("VUI LÒNG ĐỔI MẬT KHẨU (ĐĂNG NHẬP LẦN ĐẦU)", "THÔNG BÁO", MessageBoxButton.OK, MessageBoxImage.Warning);
+                GUI_ChangePass window = new GUI_ChangePass(email, this);
+                window.ShowDialog();
             }
         }
 
