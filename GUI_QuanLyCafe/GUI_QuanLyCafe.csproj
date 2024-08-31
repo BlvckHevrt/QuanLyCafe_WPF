@@ -63,11 +63,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="AddForm\GUI_AddBan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AddForm\GUI_AddNhanVien.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddForm\GUI_AddSanPham.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddForm\GUI_AddVoucher.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -79,11 +87,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="AddForm\GUI_AddBan.xaml.cs">
+      <DependentUpon>GUI_AddBan.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddForm\GUI_AddNhanVien.xaml.cs">
       <DependentUpon>GUI_AddNhanVien.xaml</DependentUpon>
     </Compile>
     <Compile Include="AddForm\GUI_AddSanPham.xaml.cs">
       <DependentUpon>GUI_AddSanPham.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddForm\GUI_AddVoucher.xaml.cs">
+      <DependentUpon>GUI_AddVoucher.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
