@@ -24,5 +24,15 @@ namespace GUI_QuanLyCafe
         {
             InitializeComponent();
         }
+
+        private void btnThem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnTimKiem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

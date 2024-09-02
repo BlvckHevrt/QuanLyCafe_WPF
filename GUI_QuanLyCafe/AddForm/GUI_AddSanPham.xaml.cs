@@ -28,5 +28,10 @@ namespace GUI_QuanLyCafe.AddForm
         {
             Application.Current.Shutdown();
         }
+
+        private void btnLuu_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

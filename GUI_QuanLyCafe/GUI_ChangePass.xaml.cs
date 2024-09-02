@@ -98,5 +98,60 @@ namespace GUI_QuanLyCafe
                 }
             }
         }
+
+        private void txtRetypePass_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void txtOldPassword_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void txtnewPassword_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void txtEmail_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void textRetypePass_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void textOldPassword_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void textNewPassword_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void textEmail_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void Image_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void chkHienMatKhau_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

@@ -23,5 +23,15 @@ namespace GUI_QuanLyCafe.AddForm
         {
             InitializeComponent();
         }
+
+        private void btnLuu_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void imgClose_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }
