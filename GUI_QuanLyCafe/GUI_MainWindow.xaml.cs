@@ -137,5 +137,13 @@ namespace GUI_QuanLyCafe
         {
             this.WindowState = WindowState.Minimized;
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (MessageBox.Show("Chắc chắn thoát?", "Thông báo", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+            {
+                e.Cancel = true; // Cancel the form close
+            }
+        }
     }
 }
