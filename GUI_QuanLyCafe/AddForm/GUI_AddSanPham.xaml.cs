@@ -33,5 +33,39 @@ namespace GUI_QuanLyCafe.AddForm
         {
 
         }
+
+        private void textMaSanPham_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            txtMaSanPham.Focus();
+        }
+
+        private void txtMaSanPham_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtMaSanPham.Text) && txtMaSanPham.Text.Length > 0)
+            {
+                textMaSanPham.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                textMaSanPham.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void textTenSanPham_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            txtTenSanPham.Focus();
+        }
+
+        private void txtTenSanPham_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtTenSanPham.Text) && txtTenSanPham.Text.Length > 0)
+            {
+                textTenSanPham.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                textTenSanPham.Visibility = Visibility.Visible;
+            }
+        }
     }
 }

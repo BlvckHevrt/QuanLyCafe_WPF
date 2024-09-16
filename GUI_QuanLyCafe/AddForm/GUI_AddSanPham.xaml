@@ -41,8 +41,8 @@
             <Border BorderThickness="1" BorderBrush="#abc0af" CornerRadius="5" Grid.Row="2" Width="250" Height="30"
                     HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top">
                 <Grid Margin="2 3">
-                    <TextBlock x:Name="textMaSanPham" Text="Mã sản phẩm" Style="{StaticResource textHint}"/>
-                    <TextBox x:Name="txtMaSanPham" Foreground="Black" FontSize="14" Style="{StaticResource textBox}"/>
+                    <TextBlock x:Name="textMaSanPham" MouseDown="textMaSanPham_MouseDown" Text="Mã sản phẩm" Style="{StaticResource textHint}"/>
+                    <TextBox x:Name="txtMaSanPham" TextChanged="txtMaSanPham_TextChanged" Foreground="Black" FontSize="14" Style="{StaticResource textBox}"/>
                 </Grid>
             </Border>
 
@@ -50,8 +50,8 @@
             <Border BorderThickness="1" BorderBrush="#abc0af" CornerRadius="5" Grid.Row="3" Width="250" Height="30"
                     HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top">
                 <Grid Margin="2 3">
-                    <TextBlock x:Name="textTenSanPham" Text="Tên sản phẩm" Style="{StaticResource textHint}"/>
-                    <TextBox x:Name="txtTenSanPham" Foreground="Black" FontSize="14" Style="{StaticResource textBox}"/>
+                    <TextBlock x:Name="textTenSanPham" MouseDown="textTenSanPham_MouseDown" Text="Tên sản phẩm" Style="{StaticResource textHint}"/>
+                    <TextBox x:Name="txtTenSanPham" TextChanged="txtTenSanPham_TextChanged" Foreground="Black" FontSize="14" Style="{StaticResource textBox}"/>
                 </Grid>
             </Border>
 
@@ -93,7 +93,7 @@
             </Button>
 
             <Button x:Name="btnLuu" Style="{StaticResource saveButton}" Click="btnLuu_Click" Grid.Row="7" 
-                    Margin="25,33,25,60" Grid.ColumnSpan="2" Grid.RowSpan="2" >
+                    Grid.ColumnSpan="2" Grid.RowSpan="2" >
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Lưu"/>
                 </StackPanel>
