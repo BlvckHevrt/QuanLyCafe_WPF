@@ -25,6 +25,12 @@ namespace GUI_QuanLyCafe
         public static int session = 0; //tình trạng login
         public static string role { set; get; } //kiểm tra vai trò sau đăng nhập
         public static int status { set; get; }
+
+       
+        //public GUI_MainWindow()
+        //{
+        //    InitializeComponent();
+        //}
         public GUI_MainWindow(string email)
         {
             InitializeComponent();
