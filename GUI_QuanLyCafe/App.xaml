@@ -317,7 +317,7 @@
             <Setter Property="Background" Value="#00704a"/>
             <Setter Property="Foreground" Value="#ffffff"/>
             <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-            <Setter Property="Width" Value="550"/>
+            <Setter Property="Width" Value="500"/>
             <Setter Property="Height" Value="50"/>
             <Setter Property="Margin" Value="0 20 0 0"/>
             <Setter Property="FontSize" Value="20"/>

@@ -55,7 +55,7 @@ namespace GUI_QuanLyCafe
 
         private void textPassword_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            textPassword.Focus();
+            txtPassword.Focus();
         }
 
         private void txtPassword_PasswordChanged(object sender, RoutedEventArgs e)
