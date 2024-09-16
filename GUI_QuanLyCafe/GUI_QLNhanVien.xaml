@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:GUI_QuanLyCafe" xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
              mc:Ignorable="d" 
              Background="#eff2f7"
-             d:DesignHeight="500" d:DesignWidth="1000">
+             d:DesignHeight="500" d:DesignWidth="1000" Loaded="UserControl_Loaded">
 
     <UserControl.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVis"/>
@@ -92,7 +92,13 @@
         </StackPanel>
 
         <!--DataGrid-->
-        <DataGrid Grid.Row="5">
+        <DataGrid x:Name="dgvDanhSachNhanVien" Grid.Row="5" AutoGenerateColumns="False" ColumnWidth="*">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding IdStaff}" Foreground="Black" Header="Mã nhân viên"/>
+                <DataGridTextColumn Header="Họ và tên nhân viên" Binding="{Binding FullName}"/>
+                <DataGridTextColumn Header="Địa chỉ email" Binding="{Binding Email}"/>
+                <DataGridTextColumn Header="Vai trò" Binding="{Binding RoleStaff}"/>
+            </DataGrid.Columns>
 
         </DataGrid>
 

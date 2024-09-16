@@ -1,5 +1,7 @@
-﻿using System;
+﻿using BUS_QuanLyCafe;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,6 +35,12 @@ namespace GUI_QuanLyCafe
         private void btnTimKiem_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+        BUS_Employee busNhanVien = new BUS_Employee();
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            DataTable dt = busNhanVien.GetPageStaff(1, 10, 1);
+            dgvDanhSachNhanVien.ItemsSource = dt.DefaultView;
         }
     }
 }

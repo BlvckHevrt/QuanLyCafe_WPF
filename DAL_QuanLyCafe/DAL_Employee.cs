@@ -35,7 +35,35 @@ namespace DAL_QuanLyCafe
                 }
             }
         }
+        public DataTable GetPagedStaff(int PageIndex, int PageSize, int status)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(_conn))
+                {
+                    SqlCommand cmd = new SqlCommand("GetPagedStaff", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@pageNumber", PageIndex);
+                    cmd.Parameters.AddWithValue("@pageSize", PageSize);
+                    cmd.Parameters.AddWithValue("@status", status);
 
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    conn.Open();
+                    da.Fill(dt);
+
+                    if (conn.State == ConnectionState.Open)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
+            return dt;
+        }
         public DataTable getStaffInfo(string idEmployee)
         {
             try

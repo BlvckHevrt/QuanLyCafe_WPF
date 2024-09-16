@@ -61,6 +61,10 @@ namespace BUS_QuanLyCafe
         {
             return employee.vaiTro(email);
         }
+        public DataTable GetPageStaff(int pageIndex, int pageSize, int status)
+        {
+            return employee.GetPagedStaff(pageIndex, pageSize, status);
+        }
         public bool insert(DTO_Employee em)
         {
             return employee.insert(em);
